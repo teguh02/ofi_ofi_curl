@@ -14,14 +14,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ofi_curl\\": "src/HttpSupport",
             "ofi\\ofi_curl\\": "src/"
         }
     },
 
     "autoload-dev": {
         "psr-4": {
-            "ofi_curl\\": "src/HttpSupport",
             "ofi\\ofi_curl\\": "src/"
         }
     }

@@ -1,6 +1,6 @@
 <?php 
 
-namespace ofi_curl\Curl;
+namespace ofi\ofi_curl\Curl;
 
 use Exception;
 

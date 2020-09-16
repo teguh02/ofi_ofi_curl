@@ -3,10 +3,11 @@
 namespace ofi\ofi_curl;
 
 use Exception;
-use ofi_curl\Curl\DELETE;
-use ofi_curl\Curl\GET;
-use ofi_curl\Curl\POST;
-use ofi_curl\Curl\PUTS;
+
+use ofi\ofi_curl\Curl\PUTS;
+use ofi\ofi_curl\Curl\DELETE;
+use ofi\ofi_curl\Curl\GET;
+use ofi\ofi_curl\Curl\POST;
 
 class HttpSupport {
 
