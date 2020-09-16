@@ -1,0 +1,26 @@
+{
+    "name": "ofi/ofi_curl",
+    "description": "Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Teguh Rijanandi",
+            "email": "teguhrijanandi02@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ofi\\curl\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "ofi\\curl\\": "src/"
+        }
+    }
+}
