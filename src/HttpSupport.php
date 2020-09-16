@@ -63,6 +63,7 @@ class HttpSupport {
     {
         $this->url_destination = $url;
         $this->selected_http_method = "POST";
+        $this->http = true;
 
         return $this;
     }
@@ -76,6 +77,7 @@ class HttpSupport {
     {
         $this->url_destination = $url;
         $this->selected_http_method = "PUT";
+        $this->http = true;
 
         return $this;
     }
@@ -89,6 +91,7 @@ class HttpSupport {
     {
         $this->url_destination = $url;
         $this->selected_http_method = "PUT";
+        $this->http = true;
 
         return $this;
     }
@@ -102,6 +105,7 @@ class HttpSupport {
     {
         $this->url_destination = $url;
         $this->selected_http_method = "GET";
+        $this->http = true;
 
         return $this;
     }
@@ -115,6 +119,7 @@ class HttpSupport {
     {
         $this->url_destination = $url;
         $this->selected_http_method = "PATCH";
+        $this->http = true;
 
         return $this;
     }
