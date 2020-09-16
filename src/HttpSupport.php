@@ -183,6 +183,14 @@ class HttpSupport {
     {
         if ($this->http) {
 
+        /**
+         * Make Request ID to HTTP request header.
+         * Request ID is a unique code to easily
+         * developer to debuging they request
+         */
+
+        array_push($this->http_headers_array, ['request-id: #' . rand(10,255)]);
+
         switch (strtoupper($this->selected_http_method)) {
             case 'GET':
 
