@@ -148,12 +148,7 @@ class HttpSupport {
     {
         $this->http = true;
         if (isset($url)) {
-            
-            if(!empty($this->url_destination)) {
-                throw new Exception("URL already set!", 1);
-            } else {
-                $this->url_destination = $url;
-            }
+            $this->url_destination = $url;
             return $this;
         } else {
             throw new Exception("URL can't blank", 1);
