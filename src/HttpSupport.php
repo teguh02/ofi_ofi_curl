@@ -189,7 +189,7 @@ class HttpSupport {
          * developer to debuging they request
          */
 
-        array_push($this->http_headers_array, ['request-id: #' . rand(10,255)]);
+        array_push($this->http_headers_array, 'request-id: #' . rand(10,1024));
 
         switch (strtoupper($this->selected_http_method)) {
             case 'GET':
