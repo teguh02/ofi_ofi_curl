@@ -18,10 +18,10 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
 
         $http = new HttpSupport();
 
-        // GET Code Example
+        // GET 
         $get = $http -> method('GET') -> url($url) -> execute();
 
-        // POST Code example
+        // POST 
 
         $post = $http -> method("POST") 
                 -> url($url)
@@ -38,7 +38,7 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
                     'Author'    => 'Teguh Rijanandi'
                 ]) -> execute();
 
-        // PUT Code Example
+        // PUT 
 
         // $put = $http -> method("PATCH") 
         $put = $http -> method("PUT") 
@@ -52,7 +52,7 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
                     'Author'    => 'New Data : Teguh Rijanandi'
                 ]) -> execute();
 
-        // DELETE Code Method
+        // DELETE 
         $delete = $http -> method("DELETE") 
                 -> url($url . '&id=1')
                 ->header([
