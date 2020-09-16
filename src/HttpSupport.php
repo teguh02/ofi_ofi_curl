@@ -15,19 +15,12 @@ class HttpSupport {
      * Define selected HTTP Methods is null
      */
 
-    protected $selected_http_method = null;
+    protected $selected_http_method = "GET";
 
     /**
-     * Define Http methods Support is turn off
+     * Define Http methods Support is turn on
      */
     protected $http = false;
-
-    /**
-     * Default is GET HTTP Methods
-     */
-
-    protected $default_methods = 'GET';
-
 
     /**
      * Define null array for http headers value
@@ -49,27 +42,80 @@ class HttpSupport {
 
     protected $url_destination = null;
 
-
-    /**
-     * Define CURL Debug is off
-     */
-
-    protected $CURLDEBUG = false;
-
     /**
      * Define HTTP Methods
      * Default is GET HTTP Methods
      */
 
-    public function method(String $method)
+    public function method(String $method = "GET")
     {
+        $this->selected_http_method = $method;
         $this->http = true;
-        if(isset($method) && $method != $this->default_methods) {
-            $this->selected_http_method = $method;
-        } else {
-            $this->selected_http_method = $this->default_methods;
-        }
-    
+        return $this;
+    }
+
+    /**
+     * To set selected method is POST
+     * Alternative use method
+     */
+
+    public function POST($url = null)
+    {
+        $this->url_destination = $url;
+        $this->selected_http_method = "POST";
+
+        return $this;
+    }
+
+    /**
+     * To set selected method is PUT
+     * Alternative use method
+     */
+
+    public function PUT($url = null)
+    {
+        $this->url_destination = $url;
+        $this->selected_http_method = "PUT";
+
+        return $this;
+    }
+
+    /**
+     * To set selected method is DELETE
+     * Alternative use method
+     */
+
+    public function DELETE($url = null)
+    {
+        $this->url_destination = $url;
+        $this->selected_http_method = "PUT";
+
+        return $this;
+    }
+
+    /**
+     * To set selected method is GET
+     * Alternative use method
+     */
+
+    public function GET($url = null)
+    {
+        $this->url_destination = $url;
+        $this->selected_http_method = "GET";
+
+        return $this;
+    }
+
+    /**
+     * To set selected method is PATCH
+     * Alternative use method
+     */
+
+    public function PATCH($url = null)
+    {
+        $this->url_destination = $url;
+        $this->selected_http_method = "PATCH";
+
         return $this;
     }
 
@@ -94,20 +140,34 @@ class HttpSupport {
         }
     }
 
+    /**
+     * URL Destination
+     */
+
     public function url(String $url)
     {
+        $this->http = true;
         if (isset($url)) {
-            $this->url_destination = $url;
+            
+            if(!empty($this->url_destination)) {
+                throw new Exception("URL already set!", 1);
+            } else {
+                $this->url_destination = $url;
+            }
             return $this;
         } else {
             throw new Exception("URL can't blank", 1);
         }
     }
 
+    /**
+     * HTTP Body
+     */
+
     public function body(Array $data)
     {
         if (strtoupper($this->selected_http_method) == 'GET') { 
-            throw new Exception("You can't use body methods with this HTTP Methods", 1);
+            throw new Exception("You can't use body methods with this HTTP Methods", 500);
             die();
         }
 
@@ -181,12 +241,6 @@ class HttpSupport {
             default:
                 throw new Exception($this->selected_http_method . ' HTTP Methods not found!', 1);
                 break;
-        }
-
-        if($this->is_debug_on) {
-            return $this;
-        } else {
-            return $execute;
         }
             
         } else {
