@@ -18,12 +18,17 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
 
         $http = new HttpSupport();
 
-        // GET 
-        $get = $http -> method('GET') -> url($url) -> execute();
+        // GET (Default is GET)
+        $get = $http -> url($url) -> execute();
 
         // POST 
+        
+        // $post = $http -> PUT()
+        // $post = $http -> PATCH()
+        // $post = $http -> DELETE()
+        // $post = $http -> GET()
 
-        $post = $http -> method("POST") 
+        $post = $http -> POST()
                 -> url($url)
                 
                 // Header as array
@@ -41,8 +46,7 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
         // PUT 
 
         // $put = $http -> method("PATCH") 
-        $put = $http -> method("PUT") 
-                -> url($url)
+        $put = $http -> PUT($url)
                 ->header([
                     'App: OFI PHP Framework',
                     'key: 123'
