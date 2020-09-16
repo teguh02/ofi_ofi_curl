@@ -77,3 +77,8 @@ Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
         print_r($delete);
     }
 </code>
+
+# Features
+We have a unique process id to easily the developer to debug they request
+
+![Request ID](https://user-images.githubusercontent.com/43981051/93305310-86abae80-f828-11ea-9215-194fd345a3e3.png)
