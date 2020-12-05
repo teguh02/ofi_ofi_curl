@@ -1,6 +1,9 @@
 # ofi_curl
 Package for HTTP Support (GET, POST, UPDATE, DELETE) to REST API Server
 
+# Instalation
+use composer <code>composer require ofi/ofi_curl</code> and then load this package like this <code>use ofi\ofi_curl\HttpSupport;</code>
+
 # Usage
 
 <code>
