@@ -6,7 +6,8 @@ use composer <code>composer require ofi/ofi_curl</code> and then load this packa
 
 # Usage
 
-<code>
+```php
+<?php
   /**
      * Example when you want to GET or POST data to other API
      * server
@@ -79,7 +80,7 @@ use composer <code>composer require ofi/ofi_curl</code> and then load this packa
 
         print_r($delete);
     }
-</code>
+```
 
 # Features
 We have a unique process id to easily the developer to debug they request
